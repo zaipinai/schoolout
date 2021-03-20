@@ -43,19 +43,12 @@
     <script>
         function alertInput()
         {
-            let name = prompt("姓名");
-            let num = prompt("学号");
-            let school = prompt("学院");
-            document.getElementById("_NAME").innerHTML = name;
-            document.getElementById("_NUM").innerHTML = "学号："+num;
-            document.getElementById("_SCHOOL").innerHTML = school;
+            
             startTime();
             btn();
         }
         function btn(){
-            var img = document.getElementById("headpic");
-            var ran = Math.floor(Math.random()*20);//生成0和7之间的随机整数；由于会随机到0，所以建议图片命名从0开始
-            img.src = "icon/headpic" + ran + ".jpg";
+            img.src = "headpic1.png";
         }
         function startTime() {
             const today = new Date();//定义日期对象
@@ -105,20 +98,20 @@ document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
     <div class="p2">
         <span class="headpic-out">
             <div class="headpic-in">
-                <img id="headpic" src="./动态码out_files/headpic10.jpg">
+                <img id="headpic" src="./headpic1.png">
             </div>
         </span>
         <span class="textbox">
             <div class="name">
-                <span id="_NAME"></span>
+                <span id="_NAME">张祯意</span>
             </div>
             <div class="info">
                 <span class="num">
-                    <span id="_NUM">学号：null</span>
+                    <span id="_NUM">学号：20271287</span>
                 </span>
                 <span class="school">
                     <li class="school1">学院：</li>
-                    <li id="_SCHOOL"></li>
+                    <li id="_SCHOOL">詹天佑学院</li>
                 </span>
             </div>
         </span>
@@ -148,7 +141,7 @@ document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
             <img src="./动态码out_files/suc.png">
         </div>
         <div class="p3d">
-            <img src="./动态码out_files/gif1.png" border="0" name="banner">
+            <img src="./gif1.png" border="0" name="banner">
             <script>
                 var banArray = new Array(2); 
                 var counter = 1;
@@ -157,7 +150,7 @@ document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
                  for(i = 0; i < 2; i++)
                  {
                   banArray[i] = new Image();
-                  banArray[i].src = "img/gif" + (i+1) + ".png";
+                  banArray[i].src = "gif" + (i+1) + ".png";
                  }
                 }
                 function changeBanner() 
@@ -215,7 +208,7 @@ document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
             </span>
         </div>
         <div class="p4ln2">
-            请于<span id="backTime">2021-03-20 21:16:55</span>前抵达下个校区
+            请于<span id="backTime"></span>前抵达下个校区
             <script>
                 const today1 = new Date();//定义日期对象
                 let year = today1.getFullYear();//通过日期对象的getFullYear()方法返回年
