@@ -1,0 +1,267 @@
+
+<!-- saved from url=(0035)http://101.132.130.180/fakeout.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <link rel="stylesheet" type="text/css" href="./动态码out_files/css.css">
+    <title>动态码</title>
+    <script language="JavaScript"> 
+        
+        if (window.Event)  
+        document.captureEvents(Event.MOUSEUP); 
+        
+        function nocontextmenu()  
+        { 
+        event.cancelBubble = true 
+        event.returnValue = false;
+        
+        return false; 
+        }
+        
+        function norightclick(e)  
+        { 
+        if (window.Event)  
+        { 
+        if (e.which == 2 || e.which == 3) 
+        return false; 
+        } 
+        else 
+        if (event.button == 2 || event.button == 3) 
+        { 
+        event.cancelBubble = true 
+        event.returnValue = false; 
+        return false; 
+        }
+        
+        }
+        
+        document.oncontextmenu = nocontextmenu; // for IE5+ 
+        document.onmousedown = norightclick; // for all others 
+    </script> 
+    <script>
+        function alertInput()
+        {
+            let name = prompt("姓名");
+            let num = prompt("学号");
+            let school = prompt("学院");
+            document.getElementById("_NAME").innerHTML = name;
+            document.getElementById("_NUM").innerHTML = "学号："+num;
+            document.getElementById("_SCHOOL").innerHTML = school;
+            startTime();
+            btn();
+        }
+        function btn(){
+            var img = document.getElementById("headpic");
+            var ran = Math.floor(Math.random()*20);//生成0和7之间的随机整数；由于会随机到0，所以建议图片命名从0开始
+            img.src = "icon/headpic" + ran + ".jpg";
+        }
+        function startTime() {
+            const today = new Date();//定义日期对象
+            const y = today.getFullYear();//通过日期对象的getFullYear()方法返回年
+            let M = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+            let d = today.getDate();//通过日期对象的getDate()方法返回年
+            const h = today.getHours();//通过日期对象的getHours方法返回小时
+            let m = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
+            let s = today.getSeconds();//通过日期对象的getSeconds方法返回秒
+            // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09   
+            M = checkTime(M);
+            d = checkTime(d);
+            m = checkTime(m);
+            s = checkTime(s);
+
+            document.getElementById("nowDateTimeSpan").innerHTML = "——当前时间：" + y + "-" + M + "-" + d + " " + h + ":" + m + ":" + s + "——";
+            setTimeout('startTime()', 1000);//每一秒中重新加载startTime()方法
+
+        }
+
+        function checkTime(i)   
+            {   
+                if (i<10){
+                    i="0" + i;
+                }   
+                  return i;
+            }
+    </script>
+    
+<style type="text/css" abt="234"></style><script>//remove baidu search ad
+var _countAA = 0
+function doBBBd(){}
+doBBBd()
+document.addEventListener('keyup', function(){_countAA-=10;doBBBd()}, false)
+document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
+
+</script></head>
+
+
+
+<body onload="alertInput()" background="./动态码out_files/bg1.png">
+    <div class="p1">
+        <div class="top-time">
+            <font size="1" color="white"><span id="nowDateTimeSpan">——当前时间：2021-03-20 18:19:25——</span></font>
+        </div>
+    </div>
+    <div class="p2">
+        <span class="headpic-out">
+            <div class="headpic-in">
+                <img id="headpic" src="./动态码out_files/headpic10.jpg">
+            </div>
+        </span>
+        <span class="textbox">
+            <div class="name">
+                <span id="_NAME"></span>
+            </div>
+            <div class="info">
+                <span class="num">
+                    <span id="_NUM">学号：null</span>
+                </span>
+                <span class="school">
+                    <li class="school1">学院：</li>
+                    <li id="_SCHOOL"></li>
+                </span>
+            </div>
+        </span>
+    </div>
+    <div class="p3">
+        <div class="p3u">
+            <span id="nowTime">扫码时间：2021-03-20 18:16:55</span>
+            <script>
+                const today = new Date();//定义日期对象
+                let yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年
+                let MM = today.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+                let dd = today.getDate();//通过日期对象的getDate()方法返回年
+                const hh = today.getHours();//通过日期对象的getHours方法返回小时
+                let mm = today.getMinutes();//通过日期对象的getMinutes方法返回分钟
+                let ss = today.getSeconds();//通过日期对象的getSeconds方法返回秒
+                // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+                MM=checkTime(MM);
+                dd=checkTime(dd);
+                mm=checkTime(mm);
+                ss=checkTime(ss);
+
+                document.getElementById("nowTime").innerHTML="扫码时间："+yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss;
+
+            </script>
+        </div>
+        <div class="p3m">
+            <img src="./动态码out_files/suc.png">
+        </div>
+        <div class="p3d">
+            <img src="./动态码out_files/gif1.png" border="0" name="banner">
+            <script>
+                var banArray = new Array(2); 
+                var counter = 1;
+                if(document.images) 
+                {
+                 for(i = 0; i < 2; i++)
+                 {
+                  banArray[i] = new Image();
+                  banArray[i].src = "img/gif" + (i+1) + ".png";
+                 }
+                }
+                function changeBanner() 
+                {
+                    if(counter > 1) counter = 0;
+                    document.banner.src = banArray[counter].src; //sets a new banner
+                    counter++; 
+                }
+                var timer = window.setInterval("changeBanner()", 500);
+            </script>
+        </div>
+    </div>
+
+    <div class="p4">
+        <div class="p4ln1">
+            <span class="p4ln1a">
+                温馨提示：
+            </span>
+            <span class="p4ln1b">
+                剩余<span id="hour">02</span>
+                <span class="mh">:</span>
+                <span id="minutes">57</span>
+                <span class="mh">:</span>
+                <span id="seconds">31</span>
+                <script type="text/javascript">        
+                    var maxtime = 60 * 60; //一个小时，按秒计算，自己调整!   
+                        function CountDown() {
+                            if (maxtime >= 0) {
+                                minutes = Math.floor(maxtime / 60);
+                                seconds = Math.floor(maxtime % 60);
+                                msg = "2:" + minutes + ":"+ seconds;
+                                minutes = checkTime(minutes);
+                                if (minutes<10 && minutes!=60){minutes="0" + minutes;} 
+                                if (seconds<10 && seconds!=60){
+                                    seconds="0" + seconds;
+                                }   
+                                document.getElementById("minutes").innerHTML = minutes;
+                                document.getElementById("seconds").innerHTML = seconds;
+                                
+                                --maxtime;
+                            } else{
+                                clearInterval(timer);
+                                alert("时间到，结束!");
+                            }
+                    }
+                    timer = setInterval("CountDown()", 1000);  
+                    function checkTime(j)   
+                    {   
+                        if (j<10){
+                            j="0" + j;
+                        }   
+                        return j;
+                    }              
+                </script>
+            </span>
+        </div>
+        <div class="p4ln2">
+            请于<span id="backTime">2021-03-20 21:16:55</span>前抵达下个校区
+            <script>
+                const today1 = new Date();//定义日期对象
+                let year = today1.getFullYear();//通过日期对象的getFullYear()方法返回年
+                let month = today1.getMonth() + 1;//通过日期对象的getMonth()方法返回年
+                let day = today1.getDate();//通过日期对象的getDate()方法返回年
+                let hour = today1.getHours()+3;//通过日期对象的getHours方法返回小时
+                let min = today1.getMinutes();//通过日期对象的getMinutes方法返回分钟
+                let sec = today1.getSeconds();//通过日期对象的getSeconds方法返回秒
+                // 如果分钟或小时的值小于10，则在其值前加0，比如如果时间是下午3点20分9秒的话，则显示15：20：09
+                if (hour>=24)
+                {
+                    hour = hour - 24;
+                    day++;
+                }
+                if (month==1 && month==3 && month==5 &&month==7&&month==8)
+                {
+                    if (day > 31)
+                    {
+                        day = 1;
+                        month++;
+                    }
+                }
+                if (month==4&&month==6&&month==9)
+                {
+                    if (day>30)
+                    {
+                        day=1;
+                        month++;
+                    }
+                }
+
+                month = checkTime(month);
+                day = checkTime(day);
+                hour = checkTime(hour);
+                min = checkTime(min);
+                sec = checkTime(sec);
+
+                document.getElementById("backTime").innerHTML=+year+"-"+month+"-"+ day +" "+ hour+":"+min+":"+sec;
+            </script>
+            
+        </div>
+    </div>
+    <div class="p5">
+        <img src="./动态码out_files/bt.png">
+    </div>
+    
+
+
+</body></html>
